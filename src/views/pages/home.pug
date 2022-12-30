@@ -1,0 +1,30 @@
+extends ../base.pug
+
+block content 
+
+    main.template(data-template="home")
+        .container(data-smoothscroll)
+            .home
+                .home_wrapper(data-observer) 
+                    section.home_hero
+                        .home_hero_heading
+                            .home_hero_title.ofh 
+                                h1|+++
+                            .home_hero_title.ofh 
+                                h1|Boilerplate
+                            .home_hero_title.ofh 
+                                h1|&#11044; PUG
+                            .home_hero_title.ofh 
+                                h1|EXPRESS 
+                                                
+                        .home_hero_extra(class="grid")
+                                h2|&#x2193;
+                                .home_hero_extra_name
+                                    p|Bruno Bosco 
+                                    p|Developer & Designer
+                                span.is-desktop|Ready to work!
+                    
+                    +contact
+                                                    
+            +footer
+

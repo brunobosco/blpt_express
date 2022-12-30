@@ -1,0 +1,52 @@
+
+mixin button-view(link)
+    a.project_link(href=link).button.--view
+        .button_wrapper 
+            .button_top 
+                .button_top_circle 
+                span.button_top_arrow|&#x2197;
+            
+            .button_bottom 
+                span|.view
+
+mixin button-link(link)
+    a(href=link target='_blank').button.--link
+        .button_wrapper 
+            .button_top 
+                .button_top_circle 
+                span.button_top_arrow|&#x2197;
+            
+            .button_bottom 
+                span|.view
+
+mixin button-menu
+    .button.--menu
+        .button_wrapper 
+            .button_top
+                .button_top_circle 
+            
+            .button_bottom
+                span|.menu
+
+mixin label(title) 
+    .label
+        .label_circle
+        h4.label_text=title
+
+
+
+mixin timer 
+    .timer
+        span|Italy 
+        span.timer_score|&nbsp; - &nbsp; 
+        span.timer_clock|++++
+
+
+//- Grid Layout 
+mixin grid
+    .grid.grid-test
+        .grid_col
+        .grid_col
+        .grid_col
+        .grid_col
+        .grid_col

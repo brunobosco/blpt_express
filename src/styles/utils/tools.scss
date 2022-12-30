@@ -1,0 +1,78 @@
+//? Utils
+.slide {
+    .ofh {
+        position: absolute;
+    }
+}
+
+.ofh {
+    overflow: hidden;
+}
+
+.mb-1 {
+    margin-bottom: 2rem;
+}
+
+//? Mqrquee
+:root {
+    --step--2: clamp(3.13rem, 2.62rem + 2.51vw, 5.76rem);
+    --step--1: clamp(3.75rem, 3.09rem + 3.29vw, 7.20rem);
+    --step-0: clamp(4.50rem, 3.64rem + 4.29vw, 9.00rem);
+  }
+
+/* animations */
+@keyframes marquee {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  @-webkit-keyframes marquee {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+
+  .marque {
+        height: 10rem;
+        overflow: hidden;
+        position: relative;
+        width: 100vw;
+
+        .marque_inner {
+            height: 100%;
+            overflow: hidden;
+            position: absolute;
+            white-space: nowrap;
+        
+            .text {
+                -webkit-animation: marquee 20000ms linear infinite;
+                animation: marquee 20000ms linear infinite;
+                align-items: center;
+                display: inline-flex;
+                will-change: transform;
+                
+            }
+
+            .text.-r {
+                -webkit-animation-name: marquee-r;
+                animation-name: marquee-r;
+            }
+
+            .text.-fast {
+              -webkit-animation: marquee 15000ms linear infinite;
+              animation: marquee 15000ms linear infinite;
+            }
+            span {
+                @extend %title-h1;
+                text-transform: uppercase;
+                line-height: 1.4;
+            }
+        }
+  }

@@ -1,0 +1,10 @@
+
+//? Easing
+$easeInOutCubic: cubic-bezier(0.65, 0, 0.35, 1);
+$easeInOutQuart: cubic-bezier(0.76, 0, 0.24, 1);
+
+//?Breakpoints
+$breakpoint-bigScreen: 1920px;
+$breakpoint-laptop: 1024px;
+$breakpoint-tablet: 768px;
+$breakpoint-mobile: 500px;

@@ -1,0 +1,184 @@
+
+mixin loader 
+    .loader 
+        .loader_wrapper(class="grid")
+            .loader_logo 
+                +logo-short
+
+            .loader_loading 
+                span|Loading assets
+                .loader_line
+                    div
+
+                span.loader_percentage|0
+
+            .loader_copy 
+                span|&copy; 2022 - brunobosco
+
+mixin page-transition 
+    .pt
+        .pt_wrapper(class="grid")
+            p.pt_loading|Loading assets...
+            p.pt_info|pathname:
+            p.pt_pathname|++++
+
+mixin navigation
+    .nav 
+        .nav_wrapper(class="grid")
+            .nav_logo
+                a.project_link(href="/" aria-label="Home page") 
+                    +logo-short 
+
+            .nav_theme
+                .nav_theme_container
+                    .nav_theme_square 
+                        +sun
+                    span.nav_theme_text(class="hover hover--link")|Light mode
+
+            //- .nav_links.is-desktop
+            //-     a.project_link(href="works") 
+            //-         span.hover.hover--link|Works
+
+            //-     a.project_link(href="about") 
+            //-         span.hover.hover--link|About
+
+            //-     a.project_link(href="poster") 
+            //-         span.hover.hover--link|Poster
+
+            //-     a(href="mailto: info@brunobosco.com")
+            //-         span.hover.hover--link|Let's talk
+            //-         span|&#x2197;
+
+            .nav_menu
+                .nav_menu_container
+                    +button-menu('menu')
+
+mixin menu 
+    .menu
+        .menu_wrapper
+            .menu_frame(class="grid")
+                .menu_pages(class="grid--2")
+                    .menu_pages_title.ofh
+                        p=menu.works[0].text 
+
+                    .menu_pages_links
+                        - const works = menu.works_list 
+                        each item in works  
+
+                            .ofh
+                                a.project_link(href=item.works_link class="menu-link hover hover--link")=item.works_title
+                       
+                        .ofh
+                            a.menu_pages_links_more(href="works" class="project_link menu-link")
+                                span.hover.hover--link=menu.works_more 
+                                span|&#x2197; 
+
+                .menu_pages(class="grid--2")
+                    .menu_pages_title.ofh
+                        p=menu.pages[0].text 
+
+                    .menu_pages_links
+                        - const list = menu.pages_list
+                        each item in list
+                            .ofh
+                                a.project_link(href=item.pages_link class="menu-link hover hover--link")=item.pages_title
+                       
+                        .ofh
+                            a.menu_pages_links_more(href="mailto:'info@brunobosco.com'")
+                                span.hover.hover--link=menu.pages_more 
+                                span|&#x2197; 
+
+                .menu_pages
+                    .menu_pages_title.ofh
+                        p|Social 
+
+                    .menu_pages_links
+                        .ofh
+                            a(href="https://www.linkedin.com/in/bruno-bosco/" target="_blank")
+                                span.hover.hover--link|Linkedin 
+                                span|&#x2197;
+                        .ofh
+                            a(href="https://github.com/brunobosco" target="_blank")
+                                span.hover.hover--link|Github 
+                                span|&#x2197;
+                        .ofh
+                            a(href="https://dribbble.com/brunobosco" target="_blank")
+                                span.hover.hover--link|Dribbble
+                                span|&#x2197;
+                        .ofh
+                            a(href="https://open.spotify.com/user/brunoboscooo?si=d1a9d52353344999" target="_blank")
+                                span.hover.hover--link|Spotify
+                                span|&#x2197;
+                    
+            .menu_subframe
+                .menu_subframe_collab.ofh
+                    .collab
+                        +collab
+                        span.collab_text
+                            =menu.collaborations[0].text
+                            br
+                            =menu.collaborations[1].text
+
+                .menu_subframe_copy.ofh
+                    .menu_subframe_copy_text
+                        span|&copy; 2022 - brunobosco
+
+        .menu_overlay
+
+mixin contact 
+    section.contact 
+        .contact_tag
+            p|CONTACT 
+            p|&#x25cf; .contact
+
+        .contact_container(class="grid")
+            .contact_extra
+                +timer
+                
+                .collab
+                    +collab
+                    span.collab_text
+                        |Open for any
+                        br
+                        |collaborations and offers
+
+
+            .contact_info
+                .contact_info_heading 
+                    p
+                        |Let's collaborate
+                        br
+                        |and make something cool together
+
+                    a.hover.hover--link(href="mailto: info@brunobosco.com")|SAY HELLO &#x2197;
+
+                .contact_info_email    
+                    span|info [at] brunobosco.com
+                    svg(viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg")
+                        path(d="M6.57603 11.8287H0V12.9802H7.82219V2.26516L11.2032 5.64908L12 4.84837L7.19591 0.0197754L2.4 4.84998L3.19561 5.64559L6.57603 2.26516V11.8287Z" fill="#E4E8ED")
+
+mixin footer 
+    section.footer
+        .footer_wrapper(class="grid")
+            .footer_link
+                a(href="https://www.linkedin.com/in/bruno-bosco/" target="_blank")
+                    span.hover.hover--link|Linkedin 
+                    span|&#x2197;
+                a(href="https://github.com/brunobosco" target="_blank")
+                    span.hover.hover--link|Github 
+                    span|&#x2197;
+                a(href="https://dribbble.com/brunobosco" target="_blank")
+                    span.hover.hover--link|Dribble
+                    span|&#x2197;
+                a(href="https://open.spotify.com/user/brunoboscooo?si=d1a9d52353344999" target="_blank")
+                    span.hover.hover--link|Spotify
+                    span|&#x2197;
+
+            .footer_scroll
+                p.hover.hover--link|Go to the top
+
+            .footer_logo 
+                +logo-extended
+
+
+

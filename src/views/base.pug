@@ -1,0 +1,23 @@
+doctype html
+html(lang="it")
+    head
+        include ./partials/head
+
+    body
+        include ./partials/mixins
+        include ./partials/icons
+        include ./partials/partials
+
+        +grid
+        
+        +loader
+        +navigation
+        //- +menu
+
+        
+        block content
+
+        +page-transition
+        canvas.webgl
+
+        script(src="main.js" type="module")

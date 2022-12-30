@@ -1,0 +1,58 @@
+
+.error {
+    position: relative;
+
+    .error_wrapper {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 6.4rem;
+    
+        overflow: hidden;
+    
+        @media (max-width: $breakpoint-tablet) {
+            gap: 9.6rem;
+        }
+    
+        .error_paragraph {
+            padding-left: 35.2rem;
+            @media (max-width: $breakpoint-tablet) {
+                padding-left: 15rem;
+            }
+        }
+        
+        .error_title {
+            grid-area: l2;
+        }
+        
+        .error_link {
+            display: inline-flex;
+            padding-left: 70.4rem;
+            @media (max-width: $breakpoint-tablet) {
+                padding-left: 30rem;
+            }
+    
+            span {
+                @extend %title-h4;
+                &:first-child {
+                    margin-right: 0.4rem;
+                }
+            }
+        }
+    }
+
+    .footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 3.2rem 9.6rem;
+        @media (max-width: $breakpoint-tablet) {
+           position: relative;
+        }
+    }
+}
+
+
+

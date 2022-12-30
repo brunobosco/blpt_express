@@ -1,0 +1,20 @@
+extends ../base.pug
+
+block content 
+    main.template(data-template="error")
+        .container
+            .error 
+                .error_wrapper
+                    p.error_paragraph|Error 404
+                    .error_title
+                        .marque     
+                            .marque_inner   
+                                span.text|Page not found - Page not found - Page not found -  
+                                span.text|Page not found - Page not found - Page not found -  
+                                span.text|Page not found - Page not found - Page not found -  
+                    a.project_link.error_link(href="/")
+                        span.hover.hover--link|Back home 
+                        span|&#x2192;
+
+
+                +footer.is-desktop          
