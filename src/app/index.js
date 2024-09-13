@@ -1,7 +1,5 @@
 import NormalizeWheel from 'normalize-wheel';
-
 import Time from './utils/Time';
-
 import Preloader from './partials/Preloader';
 
 import PageTransition from './animations/PageTransition';

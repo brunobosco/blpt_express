@@ -1,4 +1,3 @@
-import each from 'lodash/each';
 import GSAP from 'gsap';
 import { eases } from '../utils/easing';
 
@@ -23,8 +22,12 @@ export default class Page {
         this.element = document.querySelector(this.selector);
         this.elements = {};
 
-        each(this.selectorChildren, (element, key) => {
-            if (element instanceof window.HTMLElement || element instanceof window.NodeList || Array.isArray()) {
+        Array.from(this.selectorChildren).forEach((element, key) => {
+            if (
+                element instanceof window.HTMLElement ||
+                element instanceof window.NodeList ||
+                Array.isArray()
+            ) {
                 this.elements[key] = element;
             } else {
                 this.elements[key] = document.querySelectorAll(element);
@@ -39,7 +42,11 @@ export default class Page {
 
     initIntroAnimation() {
         this.intro = GSAP.timeline({ paused: true }).from(
-            [this.selectorChildren.hero_title, this.selectorChildren.hero_time, this.selectorChildren.hero_extra],
+            [
+                this.selectorChildren.hero_title,
+                this.selectorChildren.hero_time,
+                this.selectorChildren.hero_extra,
+            ],
             {
                 duration: 0.64,
                 autoAlpha: 0,

@@ -1,4 +1,3 @@
-import map from 'lodash/map';
 import GSAP from 'gsap';
 
 export function lerp(start, end, t) {
@@ -19,14 +18,6 @@ export function clamp(min, max, number) {
 
 export function clamp2(val, min, max) {
     return Math.max(Math.min(val, min), max);
-}
-
-export function mapEach(element, callback) {
-    if (element instanceof window.HTMLElement) {
-        return [callback(element)];
-    }
-
-    return map(element, callback);
 }
 
 export function canvasNoise() {

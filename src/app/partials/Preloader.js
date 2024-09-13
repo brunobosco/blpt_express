@@ -1,8 +1,6 @@
 import GSAP from 'gsap';
 import Component from '../partials/Component';
 
-import { each } from 'lodash';
-
 import { eases } from '../utils/easing';
 
 export default class Preload extends Component {
@@ -30,7 +28,7 @@ export default class Preload extends Component {
     }
 
     initLoader() {
-        each(this.elements.images, (element) => {
+        this.elements.image.forEach((element) => {
             let img = new Image();
 
             img.onload = () => this.onAssetLoaded();
